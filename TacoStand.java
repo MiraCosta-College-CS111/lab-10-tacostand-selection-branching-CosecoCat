@@ -93,6 +93,24 @@ public class TacoStand
 	 */
 	public static void updateTotalFunds(int tacoOption, int numTacos)
 	{
+		switch (tacoOption) {
+			case 1: // Asasda
+				totalFunds += 2.5 * numTacos;
+				numAsada -= numTacos;
+				break;
+			case 2: // Pollo
+				totalFunds += 1.75 * numTacos;
+				numPollo -= numTacos;
+				break;
+			case 3: // Lengua
+				totalFunds += 3.0 * numTacos;
+				numLengua -= numTacos;
+				break;
+			case 4: // Ultimate
+				totalFunds += 18.0 * numTacos;
+				numUltimate -= numTacos;
+				break;
+		}
 		//TODO: this is stubbed, replace this line with your actual code!
 	}
 	
@@ -107,6 +125,16 @@ public class TacoStand
 	 */
 	public static boolean areTacosAvailable(int tacoOption, int numTacos)
 	{
+		switch (tacoOption) {
+			case 1: // Asasda
+				return (numAsada >= numTacos) ? true : false;
+			case 2: // Pollo
+				return (numPollo >= numTacos) ? true : false;
+			case 3: // Lengua
+				return (numLengua >= numTacos) ? true : false;
+			case 4: // Ultimate
+				return (numUltimate >= numTacos) ? true : false;
+		}
 		return false; //TODO: this is stubbed, replace this line with your actual code!
 	}
 }
